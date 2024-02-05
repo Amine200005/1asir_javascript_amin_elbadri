@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calificaciones</title>
+</head>
+<body>
+
+<script>
+  /*
+    Guardar en un arrays los sueldos de varios empleados juntos a sus nombres
+    Visualizar Media y nombre de cada uno de los empleados
+  */
+
+  // ================== FUNCIONES ===========================
+  // Función para calcular la media de las notas
+  function Media(tab_sueldos) {
+    suma=0;
+    for (x in tab_sueldos) {
+      if (x > 0) {
+        suma=suma + tab_sueldos[x];}
+    }
+
+    media= suma / (tab_sueldos.length -1);
+    return(media);
+  }
+  
+    function Visualizar(mat_sueldos, media){
+        for(const x in mat_sueldos){
+            med = Media(mat_sueldos [x]);
+            alert("La media de " + mat_sueldos [x][0] + " es:" + med)
+        }
+    }
+
+    // ======================= PROGRAMA PRINCIPAL =================
+  // Declarar un array con notas
+  mat_sueldos = [ ["Messi", 1200, 2500, 1750, 2520, 3110],
+                  ["Cristiano", 300, 100, 100, 500, 1200],
+                  ["Chemita", 10000, 20250, 18000, 12350],
+                ] ;
+  // Llamar a la función para mostrar resultados
+  
+  Visualizar(mat_sueldos);
+
+</script>
+
+</body>
+</html>

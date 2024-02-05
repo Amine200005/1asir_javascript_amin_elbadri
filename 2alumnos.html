@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<h2>DATOS DE ALUMNO</h2>
+    <p id="demo"></p>
+<script>
+/*
+Guardar en un objeto json los datos de dos alumnos del 1 superior
+y luego visualizarlo mediante javascript*/
+const txt = '[{"name":"Messi", "age":36, "city":"Lituania"},{"name":"Cristiano", "age":39, "city":"Caracas"}]'
+const obj = JSON.parse(txt)
+alert (obj[0].name + ", " + obj[0].age);
+alert (obj[1].name + ", " + obj[1].age);
+
+</script>
+
+</body>
+</html>
