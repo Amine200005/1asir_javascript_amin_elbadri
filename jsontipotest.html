@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Búsqueda en Array</title>
+  <script>
+    /*
+    Declarar en json los nombres de las preguntas y las respuestas correspondientes,
+    Visualizar cuantas preguntas a acertado, y visualizar las respuestas no acertadas
+    por el usuario, junto con la respuesta correcta
+    */
+
+    let preguntas = [
+      {
+        pregunta: "¿Cuál es la capital de Francia?",
+        respuestas: ["Roma", "París", "Madrid", "Berlín"],
+        respuestaCorrecta: 1
+      },
+      {
+        pregunta: "¿Cuántos planetas hay en nuestro sistema solar?",
+        respuestas: ["8", "9", "7", "10"],
+        respuestaCorrecta: 0
+      },
+      {
+        pregunta: "¿Cual es la capital de España?",
+        respuestas: ["Madrid", "Barcelona", "Sevilla", "Malaga"],
+        respuestaCorrecta: 2
+      }
+    ];
+
+    let respuestasUsuario = [];
+
+    function mostrarPregunta(pregunta, respuestas) {
+      document.write("<p>" + pregunta + "</p>");
+      respuestas.forEach((respuesta, index) => {
+        document.write(`<input type='radio' name='pregunta${respuestasUsuario.length}' value='${index}'> ${respuesta}<br>`);
+      });
+      document.write("<br>");
+    }
+
+    function responderPreguntas() {
+      preguntas.forEach((pregunta, index) => {
+        let respuestaSeleccionada = document.querySelector(`input[name='pregunta${index}']:checked`);
+        if (respuestaSeleccionada) {
+          respuestasUsuario.push(parseInt(respuestaSeleccionada.value));
+        }
+      });
+      mostrarResultados();
+    }
+
+    function mostrarResultados() {
+      document.write("<h2>Resultados</h2>");
+      let aciertos = preguntas.reduce((contador, pregunta, index) => {
+        let resultado = pregunta.respuestaCorrecta === respuestasUsuario[index] ? "Correcto" : "Incorrecto";
+        document.write(`<p>Pregunta ${index + 1}: ${resultado}</p>`);
+        return resultado === "Correcto" ? contador + 1 : contador;
+      }, 0);
+
+      document.write(`<p>Total de aciertos: ${aciertos}</p>`);
+
+    }
+
+    window.onload = function () {
+      preguntas.forEach((pregunta, index) => {
+        mostrarPregunta(pregunta.pregunta, pregunta.respuestas);
+      });
+      document.write("<button onclick='responderPreguntas()'>Enviar Respuestas</button>");
+    };
+
+</script>
+</head>
+<body>
+  
+</body>
+</html>

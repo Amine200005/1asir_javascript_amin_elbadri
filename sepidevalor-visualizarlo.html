@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Búsqueda en Array</title>
+  <script>
+    /*
+    Declarar array con valores numericos, en donde se pide un valor y a continuacion visualizar si se encuentra en el arrays si o no
+    */
+    var tab = [10, 20, 30, 40, 50];
+
+    function Proceso(tab, num) {
+        sw = "no"
+        for (i=0 ; i < tab.length; i++){
+            if (tab[i]==num){
+                sw="si";
+            }
+        }
+        return sw;
+    }
+      
+    function Visualizar(dato){
+            if(dato == "si"){
+                alert("si encontrado")
+            }
+            else{
+                alert("no encontrado")
+            }
+        }
+
+    
+        numero=prompt("ingresar numero");
+        resul = Proceso(tab, numero);
+        Visualizar(resul);
+
+        </script>
+</head>
+<body>
+  <h2>Buscar Número en Array</h2>
+  
+</body>
+</html>

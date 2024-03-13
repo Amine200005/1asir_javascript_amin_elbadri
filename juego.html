@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adivina el Número</title>
+  <script>
+      // Adivinar el numero que ha introducido el usuario anonimo. Por cada numero introducido, hay que decir si es mayor o menor que la clave anonima. Visualizar en cuantos intentos se ha conseguido
+    document.addEventListener("DOMContentLoaded", function() {
+      // Generar una clave aleatoria entre 1 y 100
+      var clave = Math.floor(Math.random() * 100) + 1;
+
+      // Obtener al elemento de entrada y al botón
+      var inputNumero = document.getElementById("numero");
+      var btnAdivinar = document.getElementById("btnAdivinar");
+      var resultado = document.getElementById("resultado");
+
+      // contador de intentos
+      var intentos = 0;
+
+      // botón
+      btnAdivinar.addEventListener("click", function() {
+        // Obtener el número introducido por el usuario
+        var numeroUsuario = parseInt(inputNumero.value);
+
+        // Verificar si el número es igual a la clave
+        if (numeroUsuario === clave) {
+          intentos++;
+          resultado.textContent = "¡Correcto! Has adivinado en " + intentos + " intentos.";
+        } else if (numeroUsuario > clave) {
+          intentos++;
+          resultado.textContent = "El número es menor. Intentos: " + intentos;
+        } else {
+          intentos++;
+          resultado.textContent = "El número es mayor. Intentos: " + intentos;
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Adivina el Número</h1>
+  <label for="numero">Introduce un número:</label>
+  <input type="number" id="numero">
+  <button id="btnAdivinar">Adivinar</button>
+  <p id="resultado"></p>
+</body>
+</html>

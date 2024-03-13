@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Búsqueda en Array</title>
+  <script>
+    /*
+    Array con valores numericos y declarar el mayor
+    */
+    var tab = [10, 20, 30, 40, 90];
+
+function Mayor(tab) {
+    var mayor = -99999; 
+    for (i = 0; i < tab.length; i++) {
+        if (tab[i] > mayor) {
+            mayor = tab[i];
+        }
+    }
+    return mayor;
+}
+
+function Visualizar(resultado) {
+    alert("El número más grande es: " + resultado);
+}
+
+var numero = parseInt(prompt("Ingresar número"));
+var resultado = Mayor(tab);
+Visualizar(resultado);
+
+        </script>
+</head>
+<body>
+  <h2>Buscar Número en Array</h2>
+  
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calificaciones</title>
+</head>
+<body>
+
+<script>
+  /*
+   Declarar los sueldos de un empleado y obtener su media en un array 
+  */
+
+  // ================== FUNCIONES ===========================
+  // Función para calcular la media de las notas
+  function Proceso(tab_sueldos) {
+    suma=0;
+    for (const x in tab_sueldos) {
+      if (x > 0) {
+        suma=suma + tab_sueldos[x];}
+    }
+
+    media= suma / tab_sueldos.length -1;
+    return(media);
+  }
+    function Visualizar(media, tab_sueldos){
+        alert("La media de " + tab_sueldos [0] + "es:" + media)
+    }
+
+    // ======================= PROGRAMA PRINCIPAL =================
+  // Declarar un array con notas
+  tab_sueldos = [1200, 2500, 1750, 2520, 3110];
+
+  // Llamar a la función para mostrar resultados
+  resul = Proceso (tab_sueldos);
+  Visualizar(resul, tab_sueldos);
+
+</script>
+
+</body>
+</html>

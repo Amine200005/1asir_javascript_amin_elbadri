@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Búsqueda en Array</title>
+  <script>
+    /*
+    Array con valores numericos transladar todos los valores a la izquierda excepto 
+    el primero que pasa a la ultima posicion
+    */
+    function transladarIzquierda(array) {
+    // Almacenar el primer elemento
+    const primerElemento = array.shift();
+    
+    // Añadir el primer elemento al final del array
+    array.push(primerElemento);
+
+    return array;
+}
+
+// Ejemplo de uso
+const arrayNumerico = [1, 2, 3, 4, 5];
+const resultado = transladarIzquierda(arrayNumerico);
+
+console.log(resultado);
+        </script>
+</head>
+<body>
+  <h2>Buscar Número en Array</h2>
+  
+</body>
+</html>
