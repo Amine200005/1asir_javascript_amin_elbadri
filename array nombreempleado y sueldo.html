@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calificaciones</title>
+</head>
+<body>
+
+<script>
+  /*
+    Declarar dos arrays uno con nombre de empleado y otro con el sueldo correspondiente. 
+    Se pide el nombre y sueldo de empleados que tengan mayor valor
+  */
+    var nombres= ["Pepe", "Ana", "Pedro", "Luis", "Rocio"];
+    var sueldos= [2000, 1500, 1700, 2300, 2000];
+
+    //--------------FUNCIONES------------------
+    function Visualizar(nombres, sueldos){
+      let mayorsueldo=0;
+      for (let i=0; i < sueldos.length; i++){
+        if (sueldos[i] > mayorsueldo){
+          mayorsueldo = sueldos[i];
+          mayornombre = nombres[i];
+        }
+      }
+      document.write(mayornombre+" con " + mayorsueldo);
+
+    }
+
+
+    //--------------PROGRAMA PRINCIPAL---------
+    Visualizar (nombres, sueldos);
+
+</script>
+
+</body>
+</html>
+
