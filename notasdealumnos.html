@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+<script>
+  /*
+    Declarar el nombre, las notas de un alumno en json
+  */
+    let text = '{"alumnos":[{"nombre":"Laura","notas":[3,7,8,9]}, {"nombre":"Luis","notas":[3,6,7,1]}, {"nombre":"Laura","notas":[3,5,4,2]} ]}';
+    
+
+    const obj = JSON.parse(text);
+    document.getElementById("demo").innerHTML = obj.alumnos[0]['nombre']
+    +" con "+ obj.alumnos[0]['notas'][3];
+
+</script>
+
+</body>
+</html>
+
