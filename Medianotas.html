@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Calcular Media</h2>
+
+<input type="text" id="numero1" placeholder="Número 1">
+<input type="text" id="numero2" placeholder="Número 2">
+
+<button onclick="calcularMedia()">Calcular Media</button>
+
+<p id="resultado"></p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  // ================== FUNCIONES ===========================
+  function Media(num1, num2) {
+   
+    var n1 = parseFloat(num1);
+    var n2 = parseFloat(num2);
+    
+    var media = (n1 + n2) / 2;
+    
+    return media;
+  }
+  
+  function calcularMedia() {
+    var num1 = document.getElementById("numero1").value;
+    var num2 = document.getElementById("numero2").value;
+    
+    var media = Media(num1, num2);
+    
+    document.getElementById("resultado").innerHTML = "La media es: " + media;
+  }
+</script>
+
+</body>
+</html>
