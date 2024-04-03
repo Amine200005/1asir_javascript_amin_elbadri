@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Búsqueda en Array</title>
+  <script>
+     /*
+    Declara un array bi-dimensional que almacene las diferentes notas de 4 alumnos, con su nombre como
+    primer valor
+      a) Nombre de los alumnos con media aprobada
+      b) Visualizar el nombre de aquel alumno con mayor diferencia entre su nota mayor
+      y la menor
+    */
+        let notasAlumnos = [
+        ["Juan", 8, 7, 9, 6, 3, 5, 1, 7, 2],
+        ["Pablo", 2, 4, 5, 3, 7, 6, 8, 7, 4],
+        ["Pedro", 6, 8, 7, 9, 5, 2, 1, 6, 7],
+        ["Messi", 3, 8, 9, 8, 5, 2, 4, 5, 7]
+        ];
+
+        function obtenerAprobadas(tab) {
+        conta = 0;
+        for (i = 1; i < tab.length; i++) {
+            if (tab[i] >= 5) { 
+            conta++;
+            }
+        }
+        return conta;
+        }
+        function Visualizar (notasAlumnos){
+            for(j = 0; j < notasAlumnos.length ; j++){
+                document.write(notasAlumnos[j][0]+" tiene "+obtenerAprobadas(notasAlumnos[j])+ " notas aprobadas" +"<br>");
+            }
+        }
+
+        Visualizar (notasAlumnos);
+
+  </script>
+</head>
+<body>
+</body>
+</html>
