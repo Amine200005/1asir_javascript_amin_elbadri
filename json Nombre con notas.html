@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+<script>
+  /*
+Objeto json que contenga el nombre de alumno y sus dos notas, como nota 1 y nota 2,
+se pide la media del alumno con su nombre
+  */
+    const alumno = '{"alumno":"Messi","nota1":8,"nota2":7}';
+    const obj = JSON.parse(alumno);
+
+    const nombreAlumno = obj["nombre"];
+    const nota1 = obj["nota1"];
+    const nota2 = obj["nota2"];
+
+    const media = (nota1 + nota2) / 2;
+
+    alert (media);
+
+</script>
+
+</body>
+</html>
+
